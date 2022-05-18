@@ -1,5 +1,6 @@
 import express, { json } from "express"
 import mongoose from "mongoose"
+import cors from "cors"
 
 import routes from "./routes.js"
 
@@ -16,6 +17,7 @@ mongoose.connect("mongodb+srv://omnistack:omnistack@omnistack.o4c8v.mongodb.net/
 // req.params = Acessar route params (para edição, delete)
 // req.body = Acessar corpo da requisição (para criação, edição)
 
+app.use(cors())
 app.use(json())
 app.use(routes)
 
