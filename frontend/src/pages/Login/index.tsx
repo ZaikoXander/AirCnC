@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import api from "../../services/api"
 
 export default function Login() {
   const [email, setEmail] = useState("")
+  let navigate = useNavigate()
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -12,6 +14,8 @@ export default function Login() {
     const { _id } = response.data
 
     localStorage.setItem("user", _id)
+
+    navigate("/dashboard")
   }
 
   return (

@@ -1,10 +1,10 @@
-import express, { json } from "express"
+import express, { Express, json } from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 
-import routes from "./routes.js"
+import routes from "./routes"
 
-const app = express()
+const app: Express = express()
 
 mongoose.connect("mongodb+srv://omnistack:omnistack@omnistack.o4c8v.mongodb.net/semana09?retryWrites=true&w=majority") /* , {
     useNewUrlParser: true,

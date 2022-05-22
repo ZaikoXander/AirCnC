@@ -1,13 +1,13 @@
 import { Router } from "express"
 import multer from "multer"
-import uploadConfig from "./config/upload.js"
+import uploadConfig from "./config/upload"
 
-import SessionController from "./controllers/SessionController.js"
-import SpotController from "./controllers/SpotController.js"
-import DashboardController from "./controllers/DashboardController.js"
-import BookingController from "./controllers/BookingController.js"
+import SessionController from "./controllers/SessionController"
+import SpotController from "./controllers/SpotController"
+import DashboardController from "./controllers/DashboardController"
+import BookingController from "./controllers/BookingController"
 
-const routes = Router()
+const routes: Router = Router()
 const upload = multer(uploadConfig)
 
 routes.post("/sessions", SessionController.store)
