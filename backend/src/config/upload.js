@@ -1,5 +1,6 @@
 import multer from "multer";
 import path from "path"
+import { __dirname } from "./dirname";
 
 export default {
   storage: multer.diskStorage({

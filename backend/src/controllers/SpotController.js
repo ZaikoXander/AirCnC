@@ -1,8 +1,8 @@
-import User from "../models/User"
-import Spot from "../models/Spot"
+import User from "../models/User.js"
+import Spot from "../models/Spot.js"
 
 export default {
-  async index(req: any, res: any) {
+  async index(req, res) {
     const { tech } = req.query
 
     const spots = await Spot.find({ techs: tech })
@@ -10,7 +10,7 @@ export default {
     return res.json(spots)
   },
 
-  async store(req: any, res: any) {
+  async store(req, res) {
     const { filename } = req.file
     const { company, techs, price } = req.body
     const { user_id } = req.headers
@@ -25,7 +25,7 @@ export default {
       user: user_id,
       thumbnail: filename,
       company,
-      techs: techs.split(',').map((tech: any) => tech.trim()),
+      techs: techs.split(',').map(tech => tech.trim()),
       price
     })
 

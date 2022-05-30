@@ -1,9 +1,9 @@
-import User from "../models/User"
+import User from "../models/User.js"
 
 // index, show, store, update, destroy
 
 export default {
-  async store(req: any, res: any) {
+  async store(req, res) {
     const { email } = req.body
 
     let user = await User.findOne({ email })
